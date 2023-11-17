@@ -1,2 +1,7 @@
-package com.example.restapihttp.exception.reponse;public class UserNotFoundException {
+package com.example.restapihttp.exception;
+
+public class UserNotFoundException extends RuntimeException{
+    public UserNotFoundException(String message) {
+        super(message);
+    }
 }

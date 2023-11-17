@@ -1,2 +1,7 @@
-package com.example.restapihttp.exception.reponse;public class UserAlreadyExcesExecption {
+package com.example.restapihttp.exception;
+
+public class UserAlreadyExistException extends RuntimeException{
+    public UserAlreadyExistException(String message) {
+        super(message);
+    }
 }

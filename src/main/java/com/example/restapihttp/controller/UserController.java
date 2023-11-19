@@ -9,13 +9,15 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/user")
 public class UserController {
 
     public final UserService userService;
-    @PostMapping("creat-user")
+    @PostMapping("/creat-user")
     public ResponseEntity<SignUpResponse> createUser(@RequestBody SignUpRequest request){
         return userService.createUsers(request);
     }
@@ -30,6 +32,11 @@ public class UserController {
     @DeleteMapping("delete-user/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Long id){
         return userService.deleteUser(id);
+    }
+
+    @GetMapping("get-all-users")
+    public ResponseEntity<List<UserResponse>> getAllUser(){
+        return userService.getAllUser();
     }
 
 }

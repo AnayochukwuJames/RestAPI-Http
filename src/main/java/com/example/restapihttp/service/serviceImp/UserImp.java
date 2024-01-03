@@ -1,7 +1,9 @@
 package com.example.restapihttp.service.serviceImp;
 
+import com.example.restapihttp.dto.request.LoginRequest;
 import com.example.restapihttp.dto.request.SignUpRequest;
 import com.example.restapihttp.dto.request.UpdateRequest;
+import com.example.restapihttp.dto.response.LoginResponse;
 import com.example.restapihttp.dto.response.SignUpResponse;
 import com.example.restapihttp.dto.response.UserResponse;
 import com.example.restapihttp.exception.UserAlreadyExistException;
@@ -56,6 +58,10 @@ public class UserImp implements UserService {
                 .collect(Collectors.toList());
         return  new ResponseEntity<>(users,HttpStatus.OK);
     }
+//    @Override
+//    public ResponseEntity<LoginResponse> login(LoginRequest request){
+//        if(userRepository.existsByEmail(request.getEmail()));
+//        throw new RuntimeException("user already login");
+//        Users users = new Users(LoginRequest)
 
-
-}
+    }
